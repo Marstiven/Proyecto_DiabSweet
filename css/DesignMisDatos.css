@@ -1,0 +1,28 @@
+.contenedor{
+	background: white;
+	display: block;
+	position: absolute;
+	font-size: 100%;
+	padding: 2%;
+	height:100%;
+	width: 80%;
+	left: 20%;
+
+}
+.barralateral{
+	display: block;
+	position: absolute;
+	background-color: black;
+	color: white;
+	left:0;
+	height:100%;
+	width: 20%;
+	padding: 10px;
+	font-size: 10%;
+}
+
+
+.custom-width {
+            width: 4rem; /* Define el ancho deseado */
+            margin-left: 1rem;
+        }
