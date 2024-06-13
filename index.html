@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Diabsweet</title>
+    <link rel="icon" href="img/logo.ico" >
+    <link rel="stylesheet" href="css/DesignIndex.css">
+    <script src="js/Principal.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+
+<body>
+
+<!-- Header navbar -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark col-12" >
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse fs-5" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <a class="navbar-brand p-2" href="#"><img src="img/logo.png" alt="Inicio Página" title="Inicio Página" width="50"></a>
+
+        <li class="nav-item pt-3">
+          <a class="nav-link active " aria-current="page" href="#">Inicio</a>
+        </li>
+        <li id = "menu" class="nav-item dropdown pt-3" hidden>
+          <a  class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mi Actividad
+          </a>
+          <ul class="dropdown-menu ">
+            <li><a class="dropdown-item" id="Usuarios" href="Usuarios.html" hidden>Usuarios</a></li>
+            <li><a class="dropdown-item" id="Admin" href="Administradores.html"hidden>Administradores</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item"id="Alimentos" href="Alimentos.html"hidden>Alimentos</a></li>
+            <li><a class="dropdown-item"id= "Consultas" href="Consulta.html"hidden>Consultas</a></li>
+          </ul>
+        </li>
+        <li class="nav-item pt-3">
+          <a class="nav-link" id="Datos"  href="MisDatos.html"  hidden>Mis datos</a>
+        </li>
+       
+        <li class="nav-item pt-3">
+          <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#demo">Contacto</a>
+        </li>
+        <li class="nav-item dropdown pt-3">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sobre Nosotros
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item"data-bs-toggle="modal" data-bs-target="#mision">Misión</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#vision">Visión</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#politicas">Políticas</a></li>
+          </ul>
+        </li>
+      </ul>  
+      <form class="d-flex ">
+        <input class="form-control me-2" type="text" placeholder="Búsqueda">
+        <button class="btn btn-primary botones col-3 me-2" type="button">Buscar</button>
+        <button type= "button" class="botones btn btn-secondary col-3" onclick="iniciar()"  id="loginButton">Iniciar Sesión</button>
+
+      </form>
+          <script src="js/Principal.js"></script>
+    </div>
+  </div>
+</nav>
+
+<!-- Fin navbar -->
+
+
+<div>
+  <h2 class="p-2 fs-2"><br>Una dieta balanceada es un componente esencial en el manejo de la diabetes</h2>
+  <p class="p-2 fs-5">
+    Llevar una dieta balanceada es crucial para las personas con diabetes debido a varios factores que afectan su salud y calidad de vida. La diabetes es una enfermedad crónica que afecta la forma en que el cuerpo procesa el azúcar (glucosa) en la sangre. 
+  </p>
+</div>
+
+
+
+
+    <!-- OffCanvas de contactos -->
+
+<div class="offcanvas offcanvas-start bg-dark text-white" id="demo">
+  <div class="offcanvas-header">
+    <h1 class="offcanvas-title">Redes Sociales</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+    <h2>Síguenos en </h2><br>
+  </div>
+    <a href="https://www.facebook.com/Cristiano/?locale=es_LA" class="text-info"><img src="img/facebook.png" height="10%" style="position:relative; padding-right: 20px;"></a>Facebook<br><br>
+    <a href="https://www.instagram.com/" class="text-info"><img src="img/social.png" height="10%" style="position:relative; padding-right: 20px;"></a>Instagram<br><br>
+    <a href="https://www.whatsapp.com/?lang=es_LA" class="text-info"><img src="img/whatsapp.png"style="position:relative; padding-right: 20px;" height="10%"></a> Whatsapp<br>
+  </div>
+</div>
+
+    <!-- End OffCanvas -->
+
+<!-- Carousel -->
+<div>
+<div id="demo" class="carousel slide" data-bs-ride="carousel" >
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/diabetes.jpg" alt="Los Angeles" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="img/avena.jpg" alt="Chicago" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="img/alimentos.jpg" alt="New York" class="d-block w-100">
+    </div>
+  </div>
+
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+</div>
+
+<!-- bloque2-->
+<div class="p-4 fs-5">
+  <p>Aquí te presento las principales razones por las que una dieta balanceada es esencial para las personas con diabetes:</p>
+    <br>
+  <div id="accordion">
+
+    <div class="card">
+      <div class="card-header">
+        <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+          <b>Control de los niveles de glucosa en sangre</b>
+        </a>
+      </div>
+      <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+        <div class="card-body">
+          Una dieta balanceada ayuda a mantener estables los niveles de glucosa en sangre, lo cual es fundamental para evitar tanto hiperglucemia (niveles altos de azúcar en sangre) como hipoglucemia (niveles bajos de azúcar en sangre). Comer una variedad de alimentos en cantidades adecuadas y a intervalos regulares ayuda a evitar picos y caídas bruscas de glucosa.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+          <b>Prevención de complicaciones</b>
+        </a>
+      </div>
+      <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+        <div class="card-body">
+          Las personas con diabetes tienen un mayor riesgo de desarrollar complicaciones a largo plazo, como enfermedades cardíacas, daño renal, neuropatía (daño a los nervios) y problemas oculares. Una dieta balanceada que incluya alimentos ricos en nutrientes y bajos en grasas saturadas, azúcares añadidos y sodio puede ayudar a reducir estos riesgos.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+          <b>Control del peso</b>
+        </a>
+      </div>
+      <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+        <div class="card-body">
+          Mantener un peso saludable es especialmente importante para las personas con diabetes tipo 2, ya que el exceso de peso está relacionado con la resistencia a la insulina. Una dieta balanceada puede ayudar a alcanzar y mantener un peso saludable, lo que a su vez mejora la sensibilidad a la insulina y el control de la glucosa en sangre.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+          <b>Energía y bienestar general</b>
+        </a>
+      </div>
+      <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+        <div class="card-body">
+          Una dieta balanceada proporciona la energía necesaria para las actividades diarias y ayuda a mejorar el bienestar general. Consumir una variedad de alimentos ricos en vitaminas, minerales y otros nutrientes esenciales ayuda a mantener un nivel de energía constante y a mejorar la salud física y mental.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+          <b>Inclusión de alimentos beneficiosos</b>
+        </a>
+      </div>
+      <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+        <div class="card-body">
+          Ciertas comidas, como las ricas en fibra (frutas, verduras, legumbres y granos enteros), pueden ayudar a mejorar el control de la glucosa y reducir los niveles de colesterol. Incorporar alimentos con bajo índice glucémico también ayuda a evitar picos de glucosa en sangre.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+          <b>Manejo de la insulina y medicamentos</b>
+        </a>
+      </div>
+      <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+        <div class="card-body">
+          Una dieta equilibrada facilita el manejo de la insulina y otros medicamentos para la diabetes. Conocer cómo los diferentes alimentos afectan los niveles de glucosa permite a las personas con diabetes ajustar sus dosis de insulina y otros medicamentos de manera más precisa.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+          <b>Personalización y educación</b>
+        </a>
+      </div>
+      <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+        <div class="card-body">
+          Una dieta balanceada debe adaptarse a las necesidades individuales de cada persona con diabetes, considerando factores como la edad, el nivel de actividad física, las preferencias alimenticias y cualquier otra condición de salud. La educación nutricional y el asesoramiento por parte de un dietista o nutricionista pueden ser fundamentales para desarrollar un plan de alimentación adecuado.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+      <!-- Modal Mision -->
+<div class="modal" id="mision">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">Misión</h4>
+      </div>
+
+      <div class="modal-body">
+                <div class="d-flex bg-white rounded-5">
+        <div class="d-flex p-2">
+            <p>Nuestra misión es empoderar a las personas con diabetes a llevar una vida saludable y equilibrada mediante el acceso a información nutricional precisa, planes de dieta personalizados, y recursos educativos. Nos comprometemos a ofrecer herramientas y apoyo continuo para mejorar el control de la diabetes, prevenir complicaciones y promover el bienestar general.</p>
+        </div>
+    </div>
+        
+      </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+      <!-- Modal Vision -->
+<div class="modal" id="vision">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header d-flex text-center">
+        <h4 class="modal-title">Visión</h4>
+      </div>
+
+      <div class="modal-body">
+                <div class="d-flex bg-white rounded-5">
+        <div class="d-flex p-2">
+            <p>Nuestra visión es ser líderes globales en la provisión de soluciones nutricionales personalizadas y basadas en evidencia para personas con diabetes, ayudando a mejorar significativamente su calidad de vida. Nos esforzamos por ser una plataforma confiable y accesible que facilite el manejo diario de la diabetes y promueva una vida saludable, equilibrada y activa para todos nuestros usuarios.</p>
+        </div>
+    </div>
+        
+      </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+      <!-- Modal Politicas -->
+<div class="modal" id="politicas">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">Políticas</h4>
+      </div>
+
+      <div class="modal-body">
+                <div class="d-flex bg-white rounded-5">
+        <div class="d-flex p-1">
+           <p>
+<b>1. Política de Privacidad y Seguridad de Datos:</b><br>
+Proteger la información personal y de salud de nuestros usuarios mediante medidas de seguridad avanzadas.<br>
+Garantizar que los datos sean manejados de manera confidencial y utilizados únicamente para mejorar nuestros servicios.<br><br>
+<b>2. Política de Inclusión y Accesibilidad:</b><br>
+Asegurar que nuestra plataforma y recursos sean accesibles para todas las personas, incluyendo aquellas con discapacidades.<br>
+Ofrecer contenido en múltiples idiomas y adaptar nuestros servicios a diferentes necesidades culturales y sociales.<br><br>
+<b>3. Política de Calidad y Mejora Continua:</b><br>
+Mantener altos estándares de calidad en todos nuestros recursos y servicios.<br>
+Recoger y analizar feedback de los usuarios para realizar mejoras continuas y asegurar la relevancia y efectividad de nuestras soluciones.<br><br>
+<b>4. Política de Ética y Transparencia:</b><br>
+Operar con total transparencia en nuestras prácticas, comunicando claramente nuestras metodologías, fuentes de información y procesos de toma de decisiones.<br>
+Comprometerse a prácticas éticas en todas nuestras operaciones y colaboraciones.<br><br>
+<b>5. Política de Educación y Apoyo:</b><br>
+Proveer educación continua a nuestros usuarios sobre la gestión de la diabetes y la importancia de una alimentación adecuada.<br>
+Ofrecer soporte constante a través de una comunidad activa y recursos de asistencia profesional.<br><br>
+<b>6. Política de Innovación:</b><br>
+Fomentar la innovación en la creación de herramientas y recursos que mejoren la gestión de la dieta y la salud para personas con diabetes.<br>
+Invertir en investigación y desarrollo para mantenernos a la vanguardia de las soluciones nutricionales y tecnológicas.</p>
+        </div>
+    </div>
+        
+      </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<footer class="bg-secondary p-4  text-white">
+      <h2 class="d-flex justify-content-center ">Contáctanos</h2>
+  <div class="d-flex justify-content-center">
+    <div class="col-2 mt-1 blockquote ml-3">
+      <a href="https://www.facebook.com/Cristiano/?locale=es_LA"><img src="img/facebook.png" class="w-25" ></a>
+      <a href="https://www.instagram.com/"><img src="img/social.png" class="w-25"></a>
+      <a href="https://www.whatsapp.com/?lang=es_LA"><img src="img/whatsapp.png" class="w-25"></a>
+    </div>
+
+    <div class="  d-flex p-1 justify-content-center">
+      <div>
+           <p class="text-center mt-2 referencia mb-0 blockquote">&copy; 2024 Universidad Popular del Cesar. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

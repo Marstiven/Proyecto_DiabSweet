@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Consulta</title>
+	<link rel="icon" href="img/logo.ico" >
+    <script src="js/Principal.js"></script>
+    <script src="js/Usuarios.js"></script>
+    <script src="js/Alimentos.js"></script>
+    <script src="js/Consulta.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/DesignConsultas.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body class="bg-dark">
+	<!-- Header navbar -->
+<nav class="navbar navbar-expand-sm bg-light" >
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse fs-5" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <a class="navbar-brand p-2" href="#"><img src="img/logo.png" alt="Inicio Página" title="Inicio Página" width="50"></a>
+        <li class="nav-item">
+          <a class="nav-link pt-3" aria-current="page" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pt-3 " id="Usuarios" aria-current="page" href="Usuarios.html" hidden>Usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pt-3" id="Admin" aria-current="page" href="Administradores.html" hidden>Administradores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pt-3" id="Datos" aria-current="page" href="MisDatos.html"  hidden>Mis datos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pt-3" id="Alimentos" aria-current="page" href="Alimentos.html"  hidden>Alimentos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active pt-3" id= "Consultas" aria-current="page" href="#" hidden>Consultas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pt-3" data-bs-toggle="offcanvas" data-bs-target="#demo">Contacto</a>
+        </li>
+      </ul>  
+    </div>
+  </div>
+</nav>
+
+<!-- Fin navbar -->
+
+<!-- OffCanvas de contactos -->
+
+<div class="offcanvas offcanvas-start bg-dark text-white" id="demo">
+  <div class="offcanvas-header">
+    <h1 class="offcanvas-title">Redes Sociales</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+    <h2>Síguenos en </h2><br>
+  </div>
+    <a href="https://www.facebook.com/Cristiano/?locale=es_LA" class="text-info"><img src="img/facebook.png" height="10%" style="position:relative; padding-right: 20px;"></a>Facebook<br><br>
+    <a href="https://www.instagram.com/" class="text-info"><img src="img/social.png" height="10%" style="position:relative; padding-right: 20px;"></a>Instagram<br><br>
+    <a href="https://www.whatsapp.com/?lang=es_LA" class="text-info"><img src="img/whatsapp.png"style="position:relative; padding-right: 20px;" height="10%"></a> Whatsapp<br>
+  </div>
+</div>
+
+    <!-- End OffCanvas -->
+
+<!-- Cuerpo de la consulta -->
+<div class="Parte_one d-flex">
+  <h2 id="frase" class="h1 text-light" hidden>El usuario no tiene una Consulta.</h2>
+	<button class="form-control m-3" id="create" onclick="Acceso()">Crear una Consulta</button>
+  <button class="form-control m-3" id="Buscar" data-bs-toggle="modal" data-bs-target="#myModalBuscar">Buscar Consulta</button>
+  <button class="form-control m-3" id="delete" onclick="">Eliminar Consulta</button>
+
+
+  <div class="Contenedor bg-light">
+    <div class="d-flex">
+      <input class="form-control me-5 m-4" type="number"id="Id_consulta" name="Id_consulta" placeholder="ID consulta" hidden >
+      <input  class="form-control mr-5 m-4"type="text"id="Id_User"placeholder="ID Usuario" name="Id_User" hidden>
+    </div>
+    <div class="d-flex m-4">
+      <label id="textfecha" class="h5  me-2 mb-4 mt-4" for="Fecha" hidden>Fecha</label>
+      <input class="form-control-50 mb-4 mt-4" type="Date"id="Fecha"placeholder="Fecha" name="Fecha" hidden>
+    </div>
+  	<div class="d-flex justify-content-center">
+	    <table class="table-bordered table-hover w-100 m-4" id="MisAlimentos"hidden>
+	        <thead>
+	            <tr>
+	                <th>ID</th>
+	                <th>Nombre</th>
+	                <th>Categoría</th>
+	                <th>Índice Glúcemico</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	        </tbody>
+	   	 </table>
+	  </div>
+		<div class="d-flex mb-5">
+			<button id="Gestionarbtn"  class="form-control m-4" data-bs-toggle="modal" data-bs-target="#myModalgestionar"hidden>Gestionar Alimentos</button>
+		</div>
+		<div class="d-flex">
+			<button class="form-control m-4 bg-primary text-white" id="Guardar" onclick="keep()" hidden>Guardar</button>
+      <button class="form-control m-4 bg-dark text-white" id="back" onclick="back()" hidden>Volver</button>
+		</div>
+  </div>
+
+</div>
+<!-- End Consulta -->
+
+
+<!-- Gestionaralimentos -->
+<div class="modal" id="myModalgestionar">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+       <div class="d-flex justify-content-center p-2 m-4">
+              <button class="col-sm-3 btn btn-primary text-light m-2 w-50" onclick="filltableagregar()" data-bs-toggle="modal" data-bs-target="#myModalAgregar">Agregar</button>
+              <button class="col-sm-3 btn btn-danger text-light m-2 w-50" onclick="filltableEliminar()" data-bs-toggle="modal" data-bs-target="#myModalEliminar">Eliminar</button>
+           </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BuscarConsulta -->
+<div class="modal fade" id="myModalBuscar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Buscar Consulta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <div class="d-flex justify-content-center p-2">
+          <input type="number" id="ID_Buscar" name="ID_Buscar" class="form-control" placeholder="Ingrese el Id">
+          <button class="col-sm-3 btn btn-primary text-light ms-2" onclick="BuscarConsulta()">Buscar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- AgregarAlimentos -->
+<div class="modal" id="myModalAgregar">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" data-bs-dismiss="modal">Regresar</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body d-block m-3">
+        <div class="d-flex justify-content-center">
+         <table class="table-bordered" id="alimentosTable1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Índice Glúcemico</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+         </table>
+        </div>
+    </div>
+    <div class="container-fluid p-3 pt-5">
+     <div class="d-flex justify-content-center">
+        <input type="number" id="ID_Agregar" name="ID_Agregar"class="form-control-25" placeholder="Ingrese el Id">
+        <button class="form-control-25 col-sm-3 btn btn-primary text-light" onclick="add()">Agregar</button>
+     </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="table-bordered" id="Alimentos" hidden>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Índice Glúcemico</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+         </table>
+
+
+<!-- EliminarAlimentos -->
+<div class="modal" id="myModalEliminar">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" data-bs-dismiss="modal">Regresar</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body d-block">
+        <h2 id="avisodelete"hidden>No hay alimentos registrados!!!</h2>
+        <table class="table-bordered" id="alimentosTable2">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Índice Glúcemico</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+         </table>
+    </div>
+    <div class="container-fluid">
+     <div class="d-flex justify-content-center">
+        <input type="number" id="ID_Eliminar" name="ID_Eliminar"class="form-control"placeholder="Ingrese el Id" >
+        <button id="btneliminar" class="col-sm-3 btn btn-primary text-light" onclick="cut()">Eliminar</button>
+     </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
